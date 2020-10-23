@@ -18,6 +18,7 @@ const printGame = (kitalaltbetu, elet) => {
     console.log();
     console.log();
     console.log('Life: ',elet.life);
+    console.log();
 };
 
 
@@ -34,21 +35,24 @@ const isSolved = (kitalaltbetu) => {
 
 const makeGuess = (szo, kitalaltbetu, elet) => {
     let key = readlineSync.keyIn();
+    let counter = 0;
     for (let i = 0; i < szo.length; i++){
         if (szo[i] === key){
             kitalaltbetu[i] = key;
-            console.log('A keresett betű szerepel a szóban');
-            console.log();           
-            return true;
+            console.log();
+            counter++;           
         }
+    }           
+    if(counter > 0){
+        return true;
+        }
+    else {
+        console.log('A keresett betű nem szerepel a szóban');
+        console.log();       
+        elet.life--;
     }
-    elet.life--;
-    console.log('A keresett betű nem szerepel a szóban');
-    console.log();       
-
-    //return false;
 };
-
+    
 
 module.exports = {
     generateWord,
