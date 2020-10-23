@@ -1,6 +1,6 @@
 const fgv = require('./fgv');
 
-let dictionary = ['egér', 'farkas', 'liba', 'bagoly', 'tigris', 'béka', 'viziló', 'anakonda', 'vipera', 'borz',];
+let dictionary = ['eger', 'farkas', 'liba', 'bagoly', 'tigris', 'beka', 'vizilo', 'anakonda', 'vipera', 'borz',];
 let word = '';
 let guessedWord = [];
 let player = {};
@@ -9,7 +9,7 @@ let player = {};
 
 
 const main = () => {
-    word = fgv.generateWord(word, dictionary, guessedWord, player);
+    word = fgv.generateWord(dictionary, guessedWord, player);
     console.log('Üdvözlöm az akasztófa játékban!');
     fgv.printGame(guessedWord, player);
 

@@ -22,12 +22,13 @@ const printGame = (kitalaltbetu, elet) => {
 
 
 const isSolved = (kitalaltbetu) => {
+    let megoldas = true;
     for (let i = 0; i < kitalaltbetu.length; i++){
         if (kitalaltbetu[i] === '_'){
-            return false;
+            megoldas = false;
         }
-        else return true;
     };
+    return megoldas;
 };
 
 
@@ -36,12 +37,14 @@ const makeGuess = (szo, kitalaltbetu, elet) => {
     for (let i = 0; i < szo.length; i++){
         if (szo[i] === key){
             kitalaltbetu[i] = key;
-            console.log('A keresett betű szerepel a szóban');           
-            //return true;
+            console.log('A keresett betű szerepel a szóban');
+            console.log();           
+            return true;
         }
     }
     elet.life--;
-    console.log('A keresett betű nem szerepel a szóban');           
+    console.log('A keresett betű nem szerepel a szóban');
+    console.log();       
 
     //return false;
 };
