@@ -6,9 +6,7 @@ const generateWord = (szo, tarolo, kitalaltbetu, elet) => {
     for (let i = 0; i < szo.length; i++){
         kitalaltbetu.push('_');
     };
-    elet = Math.floor(szo.length/2);
-
-    
+    elet.life = Math.floor(szo.length/2); 
 };
 
 const printGame = (kitalaltbetu, elet) => {
@@ -17,8 +15,10 @@ const printGame = (kitalaltbetu, elet) => {
     }
     console.log();
     console.log();
-    console.log('Life: ',elet);
+    console.log('Life: ',elet.life);
 };
+
+
 const isSolved = (kitalaltbetu) => {
     for (let i = 0; i < kitalaltbetu.length; i++){
         if (kitalaltbetu[i] === '_'){
@@ -26,8 +26,8 @@ const isSolved = (kitalaltbetu) => {
         }
         else return true;
     };
-
 };
+
 
 const makeGuess = (szo, kitalaltbetu, elet) => {
     let key = readlineSync.keyIn();
@@ -38,9 +38,10 @@ const makeGuess = (szo, kitalaltbetu, elet) => {
         }
     }
 
-    elet--;
+    elet.life--;
     return false;
 };
+
 
 module.exports = {
     generateWord,
