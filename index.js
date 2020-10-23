@@ -9,7 +9,7 @@ let player = {};
 
 
 const main = () => {
-    fgv.generateWord(word, dictionary, guessedWord, player);
+    word = fgv.generateWord(word, dictionary, guessedWord, player);
     console.log('Üdvözlöm az akasztófa játékban!');
     fgv.printGame(guessedWord, player);
 
@@ -20,3 +20,6 @@ const main = () => {
 };
 
 main();
+
+
+

@@ -1,12 +1,14 @@
 var readlineSync = require('readline-sync');
 
-const generateWord = (szo, tarolo, kitalaltbetu, elet) => {
+const generateWord = (tarolo, kitalaltbetu, elet) => {
     let i = Math.floor(Math.random()*tarolo.length);
-    szo = tarolo[i];
+    let szo = tarolo[i];
     for (let i = 0; i < szo.length; i++){
         kitalaltbetu.push('_');
     };
     elet.life = Math.floor(szo.length/2); 
+    return szo;
+
 };
 
 const printGame = (kitalaltbetu, elet) => {
@@ -33,13 +35,15 @@ const makeGuess = (szo, kitalaltbetu, elet) => {
     let key = readlineSync.keyIn();
     for (let i = 0; i < szo.length; i++){
         if (szo[i] === key){
-            kitalaltbetu[i] = key;           
-            return true;
+            kitalaltbetu[i] = key;
+            console.log('A keresett betű szerepel a szóban');           
+            //return true;
         }
     }
-
     elet.life--;
-    return false;
+    console.log('A keresett betű nem szerepel a szóban');           
+
+    //return false;
 };
 
 
