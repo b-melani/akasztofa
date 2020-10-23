@@ -15,7 +15,7 @@ const main = () => {
 
     while (fgv.isSolved(guessedWord) == false && player.life > 0){
         fgv.makeGuess(word, guessedWord, player);
-        fgv.printGame();
+        fgv.printGame(guessedWord, player);
     };
 };
 
