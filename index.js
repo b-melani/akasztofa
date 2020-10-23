@@ -11,7 +11,7 @@ let life = {};
 const main = () => {
     fgv.generateWord(word, dictionary, guessedWord, life);
     console.log('Üdvözlöm az akasztófa játékban!');
-    fgv.printGame(guessedWord, lif.life);
+    fgv.printGame(guessedWord, life.life);
 
     while (fgv.isSolved(guessedWord) == false && life.life > 0){
         fgv.makeGuess(word, guessedWord, life.life);
