@@ -3,18 +3,18 @@ const fgv = require('./fgv');
 let dictionary = ['egér', 'farkas', 'liba', 'bagoly', 'tigris', 'béka', 'viziló', 'anakonda', 'vipera', 'borz',];
 let word = '';
 let guessedWord = [];
-let life = {};
+let player = {};
 
 
 
 
 const main = () => {
-    fgv.generateWord(word, dictionary, guessedWord, life);
+    fgv.generateWord(word, dictionary, guessedWord, player);
     console.log('Üdvözlöm az akasztófa játékban!');
-    fgv.printGame(guessedWord, life.life);
+    fgv.printGame(guessedWord, player);
 
-    while (fgv.isSolved(guessedWord) == false && life.life > 0){
-        fgv.makeGuess(word, guessedWord, life.life);
+    while (fgv.isSolved(guessedWord) == false && player.life > 0){
+        fgv.makeGuess(word, guessedWord, player);
         fgv.printGame();
     };
 };
